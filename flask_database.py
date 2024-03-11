@@ -1,0 +1,142 @@
+info = [{
+  "surname": "Панин",
+  "name": "Матвей",
+  "middle_name": "Евгеньевич",
+  "image": "matvey.jpg",
+  "edu_org": "школа 36",
+  "class_course_of_study": "10",
+  "summary": "занимается в кванториуме",
+  "add_achiev": "многократный призер и победитель олимпиад",
+  "progress": "хорошист"
+  
+},
+{
+ 
+  "surname": "Майоров",
+  "name": "Дмитрий",
+  "middle_name": "Максимович",
+  "image": "dima.jpg",
+  "edu_org": "школа 36",
+  "class_course_of_study": "10",
+  "summary": "занимается в кванториуме",
+  "add_achiev": "многократный призер и победитель олимпиад",
+  "progress": "хорошист"
+},
+{
+
+  "surname": "Екименков",
+  "name": "Александр",
+  "middle_name": "Павлович",
+  "image": "sana.jpg",
+  "edu_org": "школа 36",
+  "class_course_of_study": "10",
+  "summary": "занимается в кванториуме",
+  "add_achiev": "многократный призер и победитель олимпиад",
+  "progress": "хорошист"
+},
+{
+
+  "surname": "Иванов",
+  "name": "Ярослав",
+  "middle_name": "Сергеевич",
+  "image": "pers.jpg",
+  "edu_org": "школа 36",
+  "class_course_of_study": "10",
+  "summary": "занимается в кванториуме",
+  "add_achiev": "многократный призер и победитель олимпиад",
+  "progress": "отличник"
+},
+{
+  "surname": "Герман",
+  "name": "Егор",
+  "middle_name": "Ильич",
+  "image": "pers.jpg",
+  "edu_org": "школа 36",
+  "class_course_of_study": "10",
+  "summary": "занимается в кванториуме",
+  "add_achiev": "Борец",
+  "progress": "хорошист"
+},
+{
+  "surname": "Разжигин",
+  "name": "Владимир",
+  "middle_name": "Александрович",
+  "image": "pers.jpg",
+  "edu_org": "школа 36",
+  "class_course_of_study": "10",
+  "summary": "занимается в кванториуме",
+  "add_achiev": "многократный призер и победитель олимпиад",
+  "progress": "отличник"
+},
+{
+
+  "surname": "Ерлыгин",
+  "name": "Дмитрий",
+  "middle_name": "Сергеевич",
+  "image": "pers.jpg",
+  "edu_org": "школа 36",
+  "class_course_of_study": "10",
+  "summary": "занимается в кванториуме",
+  "add_achiev": "многократный призер и победитель олимпиад",
+  "progress": "отличник"
+},
+{
+
+  "surname": "Викторов",
+  "name": "Михаил",
+  "middle_name": "Владимирович",
+  "image": "pers.jpg",
+  "edu_org": "школа 36",
+  "class_course_of_study": "10",
+  "summary": "занимается в кванториуме",
+  "add_achiev": "тяжелая атлетика",
+  "progress": "хорошист"
+},
+{
+
+  "surname": "Гришин",
+  "name": "Дмитрий",
+  "middle_name": "Александрович",
+  "image": "pers.jpg",
+  "edu_org": "школа 36",
+  "class_course_of_study": "10",
+  "summary": "занимается в кванториуме",
+  "add_achiev": "профессиональный киберспортсмен",
+  "progress": "хорошист"
+},
+{
+ 
+  "surname": "Резонтов",
+  "name": "Александр",
+  "middle_name": "Юрьевич",
+  "image": "pers.jpg",
+  "edu_org": "школа 36",
+  "class_course_of_study": "10",
+  "summary": "занимается в кванториуме",
+  "add_achiev": "многократный призер и победитель олимпиад",
+  "progress": "хорошист"
+},
+{
+
+  "surname": "Чулкова",
+  "name": "Вероника",
+  "middle_name": "Анатольевнаы",
+  "image": "pers.jpg",
+  "edu_org": "школа 36",
+  "class_course_of_study": "10",
+  "summary": "занимается в кванториуме",
+  "add_achiev": "многократный призер и победитель олимпиад",
+  "progress": "хорошист"
+},
+{
+
+  "surname": "Румянцев",
+  "name": "Егор",
+  "middle_name": "Денисович",
+  "image": "egor.jpg",
+  "edu_org": "ПКЛ",
+  "class_course_of_study": "10",
+  "summary": "занимается в кванториуме",
+  "add_achiev": "многократный призер и победитель олимпиад",
+  "progress": "хорошист"
+}]

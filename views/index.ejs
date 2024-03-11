@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Display Data</title>
+    <title>Портфолио</title>
 
 </head>
 
@@ -93,8 +93,6 @@
       </div>
       <div class="card-body">
         <img src="images/<%=dat.image%>" class="img-thumbnail">
-        <!-- <img src="https://searchthisweb.com/wallpaper/eiffel-tower_5120x2880_kooki.jpg" class="img-thumbnail"> -->
-        <!-- <h1 class="card-title pricing-card-title">hh <small class="text-muted"> mo</small></h1> -->
 <ul class="list-unstyled mt-3 mb-4">
   <li style="font-family: CustomFont;">Образовательная организация: <%=dat.edu_org%></li>
   <li style="font-family: CustomFont;">курс/класс: <%=dat.class_course_of_study%></li>
@@ -106,7 +104,7 @@
   }
   </style>
   <!-- <a href="/user" class="btn btn-lg btn-block btn-outline-primary bg-add">Go to Example.com</a> -->
-<a href="/user?id=<%=dat.ide%>" style="font-family: CustomFont; color: rgb(255, 253, 253);" type="button" class="btn btn-lg btn-block btn-outline-primary bg-add">Подробнее</a>
+<a href="/user/<%=dat._id%>" style="font-family: CustomFont; color: rgb(255, 253, 253);" type="button" class="btn btn-lg btn-block btn-outline-primary bg-add">Подробнее</a>
       </div>
       </div>
 
