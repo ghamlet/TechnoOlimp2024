@@ -24,12 +24,12 @@
             
         <nav class="my-2 my-md-0 mr-md-3">
               
-                <a href="/admin" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Админка</a>
+                <a href="/" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Главная</a>
     
                 <a href="https://www.uecrus.com/about/structure/ao-odk-klimov/" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Информация</a>
                 <a href="https://www.uecrus.com/contacts/" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Контакты</a>
     
-                <a href= "/groups" style="font-family: CustomFont;  color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Группы</a>
+                <!-- <a href= "/groups" style="font-family: CustomFont;  color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Группы</a> -->
             </nav>
     
             
@@ -56,10 +56,11 @@
                 </div>
 
                 <!-- Можно использовать айди кнопки чтобы подтвердить отправку из другого блока -->
-                <!-- <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
-                  <input type="hidden" name="_id" value="<%= info._id %>">
+                <form  action="/upload" method="post" enctype="multipart/form-data">
+                  <input type="hidden" name="ai" value="<%= info._id %>">
                     <input type="file" name="photo" />
-                  </form> -->
+                    <button class="btn custom-button profile-button" type="submit">Сохранить</button> 
+                  </form>
               </div>
 
 
@@ -108,7 +109,7 @@
                             }
                     </style>
 
-                    <button class="btn custom-button profile-button" type="submit"  >Сохранить</button>           
+                    <button class="btn custom-button profile-button" type="submit">Сохранить</button>           
                        </div>
 
                     </form>
@@ -121,53 +122,52 @@
         </div>
 
         <div class="container">
-            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
-              <div class="col mb-3">
-                <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-                  <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-                </a>
-                <p class="text-body-secondary"></p>
-              </div>
-          
-              <div class="col mb-3">
-          
-              </div>
-          
-              <div class="col mb-3">
-                <h5>Section</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                </ul>
-              </div>
-          
-              <div class="col mb-3">
-                <h5>Section</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                </ul>
-              </div>
-          
-              <div class="col mb-3">
-                <h5>Section</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                </ul>
-              </div>
-            </footer>
-          </div>
-    </div>
+          <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+            <div class="col mb-3">
+              <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+              </a>
+              <p class="text-body-secondary"></p>
+            </div>
+        
+            <div class="col mb-3">
+        
+            </div>
+        
+            <div class="col mb-3">
+              <h5> </h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">АО "ОДК-Климов"</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">197375, Санкт-Петербург ул.</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Академика Харитона, д. 8,</a></li>
+                <!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li> -->
+              </ul>
+            </div>
+        
+            <div class="col mb-3">
+              <h5> </h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Телефон</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"> +7 (812) 647 00 38</a></li>
+                <!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li> -->
+              </ul>
+            </div>
+        
+            <div class="col mb-3">
+              <h5> </h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Для почты</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">194100, Санкт-Петербург </a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">ул. Кантемировская, д. 11, стр. 1</a></li>
+                <!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li> -->
+              </ul>
+            </div>
+          </footer>
+        </div>
    
 
 </body>

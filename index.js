@@ -2,8 +2,11 @@ let express = require(`express`);
 let app = express();
 let port = 3003;
 
-// const fileUpload = require('express-fileupload');
-// app.use(fileUpload());
+
+const esprima = require('esprima');
+
+const fileUpload = require('express-fileupload');
+app.use(fileUpload());
 
 
 const bcrypt = require('bcrypt'); //хеширование
@@ -42,6 +45,21 @@ const studentSchema = new mongoose.Schema({
 
 });
 
+
+const demoSchema = new mongoose.Schema({
+
+  surname:String,
+  name:String,
+  middle_name:String,
+  image:String,
+  edu_org:String,
+  class_course_of_study:String,
+  summary: String,
+  add_achiev: String,
+  progress: String
+
+});
+
 // const userSchema = new mongoose.Schema({
 //   email: String,
 //   password: String
@@ -55,6 +73,8 @@ const adminSchema = new mongoose.Schema({
             
 const Student = mongoose.model('Users', studentSchema);
 const Admin = mongoose.model('Admin', adminSchema);
+
+const Demo = mongoose.model('Students', demoSchema);
 
 
 // bcrypt.hash('1q2w3e4r', saltRounds, (err, hash) => {  //функция хеширования
@@ -95,33 +115,24 @@ const Admin = mongoose.model('Admin', adminSchema);
 
 
 //Индивидуальная карточка студента
-app.get('/user/:id', async function (req, res) {
+app.get('/user/:id', async  function (req, res) {
   let obj_id = req.params.id;
-  console.log(obj_id);
+  // console.log(obj_id);
 
-  let info =  await Student.findOne({_id: obj_id});
-  console.log(info.image);
+  let info = await Demo.findOne({_id: obj_id});
+  console.log(info.name);
 
-  id_user = obj_id;
+ 
   res.render('admin_about_user.ejs', {info}); 
 });
 
 
-//Группы
-  app.get('/groups', async function (req, res) {
-    try {
-      res.render('groups.ejs');
 
-   } catch (err) {
-      res.send('error!');
-  }
-     
-});
 
 
 //Страничка со всеми карточками для админа
 app.get('/admin', async function (req, res) {
-  let data = await Student.find()
+  let data = await Demo.find()
 try {
   res.render('admin_view.ejs', {data});
 } catch (err) {
@@ -267,9 +278,11 @@ app.post('/upload', (req, res) => {
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).send('No files were uploaded.');
   }
-
-  const id = req.body._id;
+  console.log(req.body);
+  const id = req.body.ai;
   console.log('name', id)
+  
+  
   const file = req.files.photo;
   const uploadPath = __dirname + '/public/images/' + id + '.jpg';
 
@@ -281,4 +294,44 @@ app.post('/upload', (req, res) => {
     res.redirect('/student?id=' + id);
     // res.send(`File ${file.name} uploaded to ${uploadPath}`);
   });
+});
+
+
+
+app.post('/admin', async function(req, res) {
+	const mark = req.body.progress; 
+  const achiev = req.body.add_achiev; 
+  console.log(mark, achiev);
+
+  if (!mark && !achiev) {
+    const data = await Demo.find();
+    try {
+      res.render('admin_view.ejs', {data});
+    } catch (err) {
+      res.send('error!');
+    }
+  }  else if (mark){
+    const data = await Demo.find({'progress': mark});
+    try {
+      res.render('admin_view.ejs', {data});
+    } catch (err) {
+      res.send('error!');
+    }
+  }  else if (achiev){
+    const data = await Demo.find({'add_achiev': achiev});
+    try {
+      res.render('admin_view.ejs', {data});
+    } catch (err) {
+      res.send('error!');
+    }
+  }
+
+
+
+  // try {
+  //   res.render('admin_view.ejs', {data});
+  // } catch (err) {
+  //   res.send('error!');
+  // }
+  // res.redirect('/admin');
 });

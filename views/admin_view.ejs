@@ -45,18 +45,51 @@
         
     <nav class="my-2 my-md-0 mr-md-3" style="display: flex; align-items: center;">
    
-      <form action="" method="get" style="display: flex; place-items: center;">
+      <!-- <form action="" method="get" style="display: flex; place-items: center;">
+        
         <input name="s" placeholder="Сортировать..." type="search">
         <button type="submit">Поиск</button>
+      </form> -->
+
+     
+      
+      <form action="/admin" method="POST">
+        <select name="progress">
+          <option selected=""> </option>
+          <option>отличник</option>
+          <option >хорошист</option>
+          <option >троечник</option>
+          <option >двоечник</option>
+        </select>
+
+        <select name="add_achiev">
+          <option selected="">  </option>
+          <option >инженер</option>
+          <option >дизайнер</option>
+          <option >электрик</option>
+          <option >программист</option>
+        </select>
+
+        <input type="submit">
       </form>
       
+
+
+<!--       
+      <form action="/admin" method="POST">
+        
+        <input type="submit">
+      </form> -->
+   
+     
+      
           
-            <!-- <a href="/admin" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Админка</a> -->
+            <a href="/" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Главная</a>
 
             <a href="https://www.uecrus.com/about/structure/ao-odk-klimov/" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Информация</a>
             <a href="https://www.uecrus.com/contacts/" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Контакты</a>
 
-            <a href= "/groups" style="font-family: CustomFont;  color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Группы</a>
+            <!-- <a href= "/groups" style="font-family: CustomFont;  color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Группы</a> -->
         </nav>
 
         
@@ -138,16 +171,14 @@
                         }
                       </style>
 
-                      <!-- <div class="card-header bg-cust card-header-relative-size text-white">
-                        <h4 style="font-family: CustomFont;" class="my-0 font-weight-normal"><%=dat.surname%> <%=dat.name%> <%=dat.middle_name%></h4>
-                      </div> -->
+                    
 
                       <div class="card-header bg-cust card-header-relative-size text-white d-flex align-items-center">
                         <h4 style="font-family: CustomFont;" class="my-0 font-weight-normal mx-auto"><%=dat.surname%> <%=dat.name%> <%=dat.middle_name%></h4>
                       </div>
 
                       <div class="card-body">
-                        <img src="images/<%=dat.image%>" class="img-thumbnail">
+                        <img src="/images/<%=dat.image%>" class="img-thumbnail">
                         <ul class="list-unstyled mt-3 mb-4">
                         <li style="font-family: CustomFont;">Образовательная организация: <%=dat.edu_org%></li>
                         <li style="font-family: CustomFont;">курс/класс: <%=dat.class_course_of_study%></li>
@@ -177,7 +208,6 @@
 </main>
     
 
-
 <div class="container">
   <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
     <div class="col mb-3">
@@ -192,35 +222,35 @@
     </div>
 
     <div class="col mb-3">
-      <h5>Section</h5>
+      <h5> </h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">АО "ОДК-Климов"</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">197375, Санкт-Петербург ул.</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Академика Харитона, д. 8,</a></li>
+        <!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li> -->
       </ul>
     </div>
 
     <div class="col mb-3">
-      <h5>Section</h5>
+      <h5> </h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Телефон</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"> +7 (812) 647 00 38</a></li>
+        <!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li> -->
       </ul>
     </div>
 
     <div class="col mb-3">
-      <h5>Section</h5>
+      <h5> </h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Для почты</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">194100, Санкт-Петербург </a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">ул. Кантемировская, д. 11, стр. 1</a></li>
+        <!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li> -->
       </ul>
     </div>
   </footer>
