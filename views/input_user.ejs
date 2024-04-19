@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<link rel="stylesheet" href="css/style_user.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <!-- <iframe src="https://gamma.app/embed/rzl99wpje8k6cx3" style="width: 1800px; max-width: 100%; height: 450px" allow="fullscreen" title="Симметрия в Пространстве"></iframe> -->
+    <title>Профиль</title>
+
+    <body>
+      <style>
+        .bg-custom {
+          background-color: #2D2926;
+        }
+        </style>
+    
+    <style>
+      .text-custom {
+        color: #ffffff;
+      }
+      </style>
+      
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-custom border-bottom shadow-sm">
+        <h5 style="font-family: CustomFont;" class="my-0 mr-md-auto font-weight-normal text-custom">АО «ОДК-Климов»</h5>    
+            
+        <nav class="my-2 my-md-0 mr-md-3">
+              
+                <a href="/admin" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Админка</a>
+    
+                <a href="https://www.uecrus.com/about/structure/ao-odk-klimov/" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Информация</a>
+                <a href="https://www.uecrus.com/contacts/" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Контакты</a>
+    
+                <a href= "/groups" style="font-family: CustomFont;  color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Группы</a>
+            </nav>
+    
+            
+            
+            <!-- <a style="font-family: CustomFont; color: #fff; text-decoration: none;" onmouseover="this.style.border='1px solid #fff';" onmouseout="this.style.border='1px solid #fff';" class="btn" href="#">Вход</a>  -->
+            <a href="/login" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Вход</a>
+            <!-- <button type="button" class="button">Click me!</button> -->
+    
+          
+          </div>
+
+
+    <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+            
+
+           
+            <div class="col-md-3 border-right">
+                <div class="align-items-center text-center p-3 py-5">
+                  <img class="rounded-circle img-thumbnail" src="/images/<%=info._id %>.jpg">
+                  <span class="font-weight-bold"></span>
+                  <span class="text-black-50"></span>
+                  <span> </span>
+                </div>
+
+                <!-- Можно использовать айди кнопки чтобы подтвердить отправку из другого блока -->
+                <!-- <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+                  <input type="hidden" name="_id" value="<%= info._id %>">
+                    <input type="file" name="photo" />
+                  </form> -->
+              </div>
+
+
+              
+
+
+            <div class="col-md-5 border-right">
+
+                <form action="/user_input" method="post"> 
+                  <input type="hidden" name="id" value="<%= info._id %>">          
+                        <div class="p-3 py-5">
+                   
+                    <h4 class="text-right text-center">Профиль</h4>
+                    
+                    
+                    <div class="row mt-2">
+                      
+                        <div class="col-md-6"><label class="labels">Имя</label><input name='name' type="text" class="form-control" value="<%=info? info.name: '' %>"> </div>
+                        <div class="col-md-6"><label class="labels">Фамилия</label><input name="middle_name" type="text" class="form-control" value="<%=info? info.middle_name: '' %>"></div>
+                            <div class="col-md-6"><label class="labels">Отчество</label><input name="surname"  type="text" class="form-control" value="<%=info? info.surname: '' %>"></div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Учебная организация</label><input name="edu_org" type="text" class="form-control" value="<%=info? info.edu_org: '' %>"></div>
+                        <div class="col-md-12"><label class="labels">Класс/курс образования</label><input name="class_course_of_study" type="text" class="form-control" value="<%=info? info.class_course_of_study: '' %>"></div>
+                        <div class="col-md-12"><label class="labels">Резюме</label><input name="summary" type="text" class="form-control" value="<%=info? info.summary: '' %>"></div>
+                        <div class="col-md-12"><label class="labels">Достижения</label><input name="add_achiev" type="text" class="form-control" value="<%=info? info.add_achiev: '' %>"></div>
+                        <div class="col-md-12"><label class="labels">Успеваемость</label><input name="progress" type="text" class="form-control" value="<%=info? info.progress: '' %>"></div>
+                        <div class="col-md-12"><label class="labels">Электронная почта</label><input name="email" type="text" class="form-control" value="<%= info? info.email : '' %>"></div>
+
+                    </div>
+                
+                </div>
+                
+
+
+                <div class="mt-5 d-flex justify-content-center">
+                    <style>
+                        .custom-button {
+                            background-color: #A33038;
+                            color: white;
+                            
+                            }
+                            .custom-button:hover {
+                            color: white;
+                            }
+                    </style>
+
+                    <button class="btn custom-button profile-button" type="submit"  >Сохранить</button>           
+                       </div>
+
+                    </form>
+            </div>
+
+           
+            
+            
+            <div class="col-md-4"> </div>
+        </div>
+
+        <div class="container">
+            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+              <div class="col mb-3">
+                <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                  <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+                <p class="text-body-secondary"></p>
+              </div>
+          
+              <div class="col mb-3">
+          
+              </div>
+          
+              <div class="col mb-3">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+              </div>
+          
+              <div class="col mb-3">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+              </div>
+          
+              <div class="col mb-3">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+              </div>
+            </footer>
+          </div>
+    </div>
+   
+
+</body>
+</html>

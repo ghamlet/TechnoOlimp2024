@@ -2,20 +2,34 @@ let express = require(`express`);
 let app = express();
 let port = 3003;
 
+// const fileUpload = require('express-fileupload');
+// app.use(fileUpload());
+
+
+const bcrypt = require('bcrypt'); //хеширование
+const saltRounds = 10;
+
 app.listen(port, function () {
     console.log(`http://localhost:${port}`);
 });
 
+
+
+ 
 app.use(express.static(`public`));
+
 app.use(express.urlencoded({ extended: true }))
 
 let mongoose = require(`mongoose`);
 mongoose.connect('mongodb://127.0.0.1:27017/flask_database');
-app.use(express.urlencoded({ extended: true }))
+
 app.set('view engine', 'ejs');//в какой папке находится
 
    
 const studentSchema = new mongoose.Schema({
+    email: String,
+    password: String,
+
     surname:String,
     name:String,
     middle_name:String,
@@ -27,75 +41,244 @@ const studentSchema = new mongoose.Schema({
     progress: String
 
 });
+
+// const userSchema = new mongoose.Schema({
+//   email: String,
+//   password: String
+// });
+
+
+const adminSchema = new mongoose.Schema({
+  email: String,
+  password: String
+});
             
-const Student = mongoose.model('student', studentSchema);
+const Student = mongoose.model('Users', studentSchema);
+const Admin = mongoose.model('Admin', adminSchema);
+
+
+// bcrypt.hash('1q2w3e4r', saltRounds, (err, hash) => {  //функция хеширования
+//   if (err) {
+//     console.error(err);
+//   } else {
+    
+//     const newUser = new Admin({
+//       email: 'dmtr317744@gmail.com',
+//       password: hash
+//     });
+    
+//     newUser.save()
+//     .then(() => {
+//       console.log('User saved successfully!');
+//     })
+//     .catch(err => {
+//       console.error(err);
+//     });
+    
+  
+
+
+//   }
+// });
 
 
   app.get('/', async function (req, res) {
             let data = await Student.find()
         try {
-            res.render('index', {data
+            res.render('page2', {data
                 
             });
          } catch (err) {
-            // План Б (что-то пошло не так)
             res.send('error!');
         }
     });
 
 
+//Индивидуальная карточка студента
+app.get('/user/:id', async function (req, res) {
+  let obj_id = req.params.id;
+  console.log(obj_id);
 
-    app.get('/user/:id', async function (req, res) {
-        let obj_id = req.params.id;
-        console.log(obj_id);
-    
-        // let info =  await Student.findOne({_id: obj_id});
-        // console.log(info);
+  let info =  await Student.findOne({_id: obj_id});
+  console.log(info.image);
 
-        res.redirect(`/users_add?id=${obj_id}`);
-    
-        // res.render('about_user', {info});
-    });
+  id_user = obj_id;
+  res.render('admin_about_user.ejs', {info}); 
+});
 
-    // app.get('/user', function(req, res) {
-    //   const ide = req.query.id;
+
+//Группы
+  app.get('/groups', async function (req, res) {
+    try {
+      res.render('groups.ejs');
+
+   } catch (err) {
+      res.send('error!');
+  }
+     
+});
+
+
+//Страничка со всеми карточками для админа
+app.get('/admin', async function (req, res) {
+  let data = await Student.find()
+try {
+  res.render('admin_view.ejs', {data});
+} catch (err) {
+  res.send('error!');
+}
+});
+
+
+
+
+//Регистрация
+app.post('/submit-form',  (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+
+  bcrypt.hash(password, saltRounds, (err, hash) => {  //функция хеширования
+    if (err) {
+      console.error(err);
+    } else {
       
-    //   res.redirect(`/users_add?id=${ide}`);
-    // });
+      const newStudent = new Student({
+        email: email,
+        password: hash,
+
+        surname:' ',
+        name:' ',
+        middle_name:' ',
+        image:' ',
+        edu_org:' ',
+        class_course_of_study:' ',
+        summary: ' ',
+        add_achiev: ' ',
+        progress: ' '
+
+      });
+      
+      newStudent.save()
+      .then(() => {
+        console.log('User saved successfully!');
+      })
+      .catch(err => {
+        console.error(err);
+      });
+      
+      res.redirect('/');
 
 
-    // app.get(`/user`, async function (req, res) {
-    // let obj_ide = req.query.id;
-    // console.log(obj_ide);
+    }
+  });
 
-    // let info =  await Student.findOne({_id:obj_ide})
-    //   console.log(info);
 
+});
+
+
+
+//Резюме студента для заполнения
+app.get('/student', async function (req, res) {
+  const id = req.query.id;
+  console.log(id);
+
+  let info =  await Student.findOne({_id: id});
+  console.log(info);
+
+  try {
+    res.render('input_user.ejs', {info});
+
+ } catch (err) {
+    res.send('error!');
+}
+   
+});
+
+
+//Ссылка для кнопки Вход на главной странице
+app.get('/login', async function (req, res) {
+  try {
+    res.render('login.ejs');
+
+ } catch (err) {
+    res.send('error!');
+}
+   
+});
+
+
+//Вход в аккаунт
+
+  app.post('/login', async (req, res) => {
+    const { email, password } = req.body;  
+    console.log(email, password)
+  
+    const admin = await Admin.findOne({ email });
+    if (!admin) {
+      // return res.status(401).send('Это не почта админа');
+      const user = await Student.findOne({ email });
+      if (!user) {
+        return res.status(401).send('Почта не зарегистрирована');
+      }
     
+      // Compare the incoming password to the stored hash
+      const isPasswordUserValid = await bcrypt.compare(password, user.password);
+    
+      if (!isPasswordUserValid) {
+        return res.status(401).send('Неверный пароль');
+      }
+      
+      res.redirect('/student?id=' + user._id);
+
+    } else {
+      const isPasswordAdminValid = await bcrypt.compare(password, admin.password);
+      if (!isPasswordAdminValid) {
+        return res.status(401).send('Неверный пароль для админа');
+      }
+      
+      res.redirect('/admin');
+    }
+  
+  });
+
+ 
+  app.post('/user_input',  (req, res) => {
+   console.log( req.body )
+   
+    const id = req.body.id;
+   console.log('id', id);
+   console.log('TELO',req.body);
+
+   const update = req.body;
+   const query = { _id: id };
+
+   Student.updateOne(query, update)
+   .then(() => {
+     res.redirect('/student?id=' + id);
+   })
+   .catch((err) => {
+     console.error(err);
+   });
+});
 
 
-    app.get(`/users_add`, async function(req, res) {
-      let obj_id = req.query.id;
-      console.log(obj_id);
 
-      let info =  await Student.findOne({_id: obj_id});
-        console.log(info.image);
+app.post('/upload', (req, res) => {
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send('No files were uploaded.');
+  }
 
-        res.render('about_user', {info});
+  const id = req.body._id;
+  console.log('name', id)
+  const file = req.files.photo;
+  const uploadPath = __dirname + '/public/images/' + id + '.jpg';
 
-    //   let info =   Student.findOne({_id:obj_id})
-    //   console.log(info);
-
-    //   let info =  Student.findOne({ide:ide})
-    //   console.log(info);
-    //     try {
-    //         res.render('user', {info
-                
-    //         });
-    //      } catch (err) {
-    //         // План Б (что-то пошло не так)
-    //         res.send('error!');
-    //     }
-
-
-    });
+  file.mv(uploadPath, (err) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send(err);
+    }
+    res.redirect('/student?id=' + id);
+    // res.send(`File ${file.name} uploaded to ${uploadPath}`);
+  });
+});

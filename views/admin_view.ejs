@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: CustomFont;
+      src: url('open-sans.woff2') format('woff2');
+      font-weight: 300;
+      font-style: 600;
+}
+  </style>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+     <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+    <title>Портфолио</title>
+
+</head> 
+
+
+
+<body>
+
+  <style>
+    .bg-custom {
+      background-color: #2D2926;
+    }
+    </style>
+
+<style>
+  .text-custom {
+    color: #ffffff;
+  }
+  </style>
+  
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-custom border-bottom shadow-sm">
+    
+      <h5 style="font-family: CustomFont;" class="my-0 mr-md-auto font-weight-normal text-custom">АО «ОДК-Климов»</h5>    
+        
+    <nav class="my-2 my-md-0 mr-md-3" style="display: flex; align-items: center;">
+   
+      <form action="" method="get" style="display: flex; place-items: center;">
+        <input name="s" placeholder="Сортировать..." type="search">
+        <button type="submit">Поиск</button>
+      </form>
+      
+          
+            <!-- <a href="/admin" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Админка</a> -->
+
+            <a href="https://www.uecrus.com/about/structure/ao-odk-klimov/" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Информация</a>
+            <a href="https://www.uecrus.com/contacts/" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Контакты</a>
+
+            <a href= "/groups" style="font-family: CustomFont;  color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Группы</a>
+        </nav>
+
+        
+        
+        <!-- <a style="font-family: CustomFont; color: #fff; text-decoration: none;" onmouseover="this.style.border='1px solid #fff';" onmouseout="this.style.border='1px solid #fff';" class="btn" href="#">Вход</a>  -->
+        <a href="/login" style="font-family: CustomFont; color: #fff; text-decoration: none; font-size: 20px;" onmouseover="this.style.color='	#A33038';" onmouseout="this.style.color='#fff';" class="p-2">Вход</a>
+        <!-- <button type="button" class="button">Click me!</button> -->
+
+      
+      </div>
+    
+    
+    
+    <section class="py-1 text-center container">
+    <div class="row py-lg-2">
+      <div class="col-lg-8 col-md-8 mx-auto">
+        <h1 style="font-family: CustomFont;" class="fw-light">Наши студенты</h1>
+        <p style="font-family: CustomFont;" class="lead text-body-secondary">Личные странички</p>
+        <p>
+         
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <main>
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+        <!-- перебираем элементы из базы данных -->
+        <% data.forEach(dat => { %>
+
+          <!-- появление тени при наведении -->
+            <style>
+              .col:hover   {
+                background-color: rgba(162, 161, 167, 0.1);
+              }
+
+              /* изменение размеров карточки при наведении */
+            .col-hover:hover {
+            width: 45%;
+            height: 55%;
+              }
+            </style>
+
+            <!-- <style>
+              #my-special-col:hover {
+                background-color: rgba(162, 161, 167, 0.1);
+              }
+            
+              #my-special-col-hover:hover {
+                width: 45%;
+                height: 55%;
+              }
+            </style> -->
+
+            <div class="col col-hover pb-3"> 
+              <!-- добавление id позволяет изменять стиль класса только в одном месте -->
+             
+             <style>
+              .card-fixed-size {
+                width: 100%;
+                height: 100%;
+              }
+              </style>
+
+                  <div class="card mb-4 shadow-sm card-fixed-size p-2">
+                    <style>
+                        .bg-cust {
+                          /* цвет карточек */
+                          background-color: #4D4E53; 
+                        }
+                        .card-header-relative-size {
+                          height: 20%;
+                        }
+                      </style>
+
+                      <!-- <div class="card-header bg-cust card-header-relative-size text-white">
+                        <h4 style="font-family: CustomFont;" class="my-0 font-weight-normal"><%=dat.surname%> <%=dat.name%> <%=dat.middle_name%></h4>
+                      </div> -->
+
+                      <div class="card-header bg-cust card-header-relative-size text-white d-flex align-items-center">
+                        <h4 style="font-family: CustomFont;" class="my-0 font-weight-normal mx-auto"><%=dat.surname%> <%=dat.name%> <%=dat.middle_name%></h4>
+                      </div>
+
+                      <div class="card-body">
+                        <img src="images/<%=dat.image%>" class="img-thumbnail">
+                        <ul class="list-unstyled mt-3 mb-4">
+                        <li style="font-family: CustomFont;">Образовательная организация: <%=dat.edu_org%></li>
+                        <li style="font-family: CustomFont;">курс/класс: <%=dat.class_course_of_study%></li>
+                        </ul>
+          
+
+                       
+                      <a href="/user/<%=dat._id%>" style="font-family: CustomFont; color: #ffffff; border-color: #4D4E53; background-color: #4D4E53; transition: color 0.3s ease;" type="button" class="btn btn-lg btn-block btn-outline-primary bg-add" style="text-decoration: none;">Подробнее</a>
+                      
+
+
+                      
+                       
+                      
+                      
+                        
+                            </div>
+                      </div>
+                    </div>
+
+
+          <% }); %>
+
+        </div>
+    </div>
+</div>
+</main>
+    
+
+
+<div class="container">
+  <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+    <div class="col mb-3">
+      <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <p class="text-body-secondary"></p>
+    </div>
+
+    <div class="col mb-3">
+
+    </div>
+
+    <div class="col mb-3">
+      <h5>Section</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+      <h5>Section</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+      <h5>Section</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
+

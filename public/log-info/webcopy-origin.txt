@@ -1,0 +1,52 @@
+Uri: https://cdn.jsdelivr.net/npm/@docsearch/css@3
+File Name: C:\Downloaded Web Sites\getbootstrap.com\npm\@docsearch\css@3
+Content Type: text/css
+
+Uri: https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg
+File Name: C:\Downloaded Web Sites\getbootstrap.com\docs\5.3\assets\brand\bootstrap-logo.svg
+Content Type: image/svg+xml
+
+Uri: https://getbootstrap.com/docs/5.3/assets/img/favicons/apple-touch-icon.png
+File Name: C:\Downloaded Web Sites\getbootstrap.com\docs\5.3\assets\img\favicons\apple-touch-icon.png
+Content Type: image/png
+
+Uri: https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-16x16.png
+File Name: C:\Downloaded Web Sites\getbootstrap.com\docs\5.3\assets\img\favicons\favicon-16x16.png
+Content Type: image/png
+
+Uri: https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-32x32.png
+File Name: C:\Downloaded Web Sites\getbootstrap.com\docs\5.3\assets\img\favicons\favicon-32x32.png
+Content Type: image/png
+
+Uri: https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon.ico
+File Name: C:\Downloaded Web Sites\getbootstrap.com\docs\5.3\assets\img\favicons\favicon.ico
+Content Type: image/vnd.microsoft.icon
+
+Uri: https://getbootstrap.com/docs/5.3/assets/img/favicons/manifest.json
+File Name: C:\Downloaded Web Sites\getbootstrap.com\docs\5.3\assets\img\favicons\manifest.json
+Content Type: application/json
+
+Uri: https://getbootstrap.com/docs/5.3/assets/img/favicons/safari-pinned-tab.svg
+File Name: C:\Downloaded Web Sites\getbootstrap.com\docs\5.3\assets\img\favicons\safari-pinned-tab.svg
+Content Type: image/svg+xml
+
+Uri: https://getbootstrap.com/docs/5.3/assets/js/color-modes.js
+File Name: C:\Downloaded Web Sites\getbootstrap.com\docs\5.3\assets\js\color-modes.js
+Content Type: application/javascript
+
+Uri: https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css
+File Name: C:\Downloaded Web Sites\getbootstrap.com\docs\5.3\dist\css\bootstrap.min.css
+Content Type: text/css
+
+Uri: https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js
+File Name: C:\Downloaded Web Sites\getbootstrap.com\docs\5.3\dist\js\bootstrap.bundle.min.js
+Content Type: application/javascript
+
+Uri: https://getbootstrap.com/docs/5.3/examples/sign-in/
+File Name: C:\Downloaded Web Sites\getbootstrap.com\docs\5.3\examples\sign-in\index.htm
+Content Type: text/html
+
+Uri: https://getbootstrap.com/docs/5.3/examples/sign-in/sign-in.css
+File Name: C:\Downloaded Web Sites\getbootstrap.com\docs\5.3\examples\sign-in\sign-in.css
+Content Type: text/css
+
