@@ -77,29 +77,6 @@ const Admin = mongoose.model('Admin', adminSchema);
 const Demo = mongoose.model('Students', demoSchema);
 
 
-// bcrypt.hash('1q2w3e4r', saltRounds, (err, hash) => {  //функция хеширования
-//   if (err) {
-//     console.error(err);
-//   } else {
-    
-//     const newUser = new Admin({
-//       email: 'dmtr317744@gmail.com',
-//       password: hash
-//     });
-    
-//     newUser.save()
-//     .then(() => {
-//       console.log('User saved successfully!');
-//     })
-//     .catch(err => {
-//       console.error(err);
-//     });
-    
-  
-
-
-//   }
-// });
 
 
   app.get('/', async function (req, res) {
@@ -327,11 +304,4 @@ app.post('/admin', async function(req, res) {
   }
 
 
-
-  // try {
-  //   res.render('admin_view.ejs', {data});
-  // } catch (err) {
-  //   res.send('error!');
-  // }
-  // res.redirect('/admin');
 });
